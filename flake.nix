@@ -16,20 +16,42 @@
   outputs = { self, nixpkgs, astronvim, ... } @ inputs:
   let
     user = "Devemoe";
-    hostname = "MoeOS";
-    stateVersion = "25.05";
-    pkgs = nixpkgs.legacyPackages."x86_64-linux";
+
+    hosts = [
+      { hostname = "MoeOS"; system = "x86_64-linux"; stateVersion = "25.05"; }
+    ];
+
+    makeSystem = { hostname, system, stateVersion }: nixpkgs.lib.nixosSystem {
+      system = system;
+      specialArgs = {
+        inherit inputs user hostname system stateVersion;
+      };
+
+      modules = [
+        ./hosts/${hostname}
+        ./nixos/modules
+        
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "bak";
+            extraSpecialArgs = {
+              inherit inputs user stateVersion;
+            };
+          };
+        }
+      ];
+    };
   in
+
   {
-    nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-      modules = [ ./nixos/modules ];
-      specialArgs = { inherit inputs user hostname stateVersion; };
-      inherit pkgs;
-    };
-    homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-      modules = [ ./home-manager/home.nix ];
-      extraSpecialArgs = { inherit inputs user hostname stateVersion; };
-      inherit pkgs;
-    };
+    nixosConfigurations = builtins.listToAttrs (map (host: {
+      name = host.hostname;
+      value = makeSystem {
+        inherit (host) hostname system stateVersion;
+      };
+    }) hosts);
   };
 }
