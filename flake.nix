@@ -37,6 +37,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             backupFileExtension = "bak";
+            users.${user} = ./hosts/${hostname};
             extraSpecialArgs = {
               inherit inputs user stateVersion;
             };
