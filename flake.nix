@@ -28,7 +28,7 @@
     };
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       modules = [ ./home-manager/home.nix ];
-      specialArgs = { inherit inputs user hostname stateVersion; };
+      extraSpecialArgs = { inherit inputs user hostname stateVersion; };
       inherit pkgs;
     };
   };
