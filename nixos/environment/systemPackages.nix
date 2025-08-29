@@ -32,5 +32,6 @@
     hyprland
     hyprpaper
     playerctl
+    wl-clipboard
   ];
 }
