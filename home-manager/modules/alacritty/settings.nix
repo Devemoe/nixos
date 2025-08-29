@@ -1,7 +1,5 @@
 {
   programs.alacritty.settings = {
-    history = 0;
-
     font = {
       size = 13;
 
