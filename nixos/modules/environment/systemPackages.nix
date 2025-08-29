@@ -20,13 +20,11 @@
     tree
     unzip
     zip
+    wget
+    curl
 
     # Compilers
-    cargo
     clang
-    nodejs
-    python314
-    rustc
     rustup
 
     # Desktop environment
