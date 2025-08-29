@@ -7,11 +7,13 @@
     zathura
 
     # CLI programs
+    bat
     btop
     htop
     neofetch
     neovim
     ranger
+    tree
     unzip
     zip
 
