@@ -4,12 +4,15 @@
     # Desktop programs
     alacritty
     firefox
+    imv
+    mpv
     telegram-desktop
     zathura
 
     # CLI programs
     bat
     btop
+    git
     htop
     neofetch
     neovim
@@ -33,5 +36,6 @@
     hyprpaper
     playerctl
     wl-clipboard
+    wofi
   ];
 }

@@ -1,5 +1,5 @@
 {
-  networking.networknamager = {
+  networking.networkmanager = {
     enable = true;
 
     wifi = {

@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, astronvim, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, astronvim, ... } @ inputs:
   let
     user = "Devemoe";
 
@@ -36,8 +36,8 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            backupFileExtension = "bak";
-            users.${user} = ./hosts/${hostname};
+            backupFileExtension = "backup";
+            users.${user} = ./home-manager/home.nix;
             extraSpecialArgs = {
               inherit inputs user stateVersion;
             };
