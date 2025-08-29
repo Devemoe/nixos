@@ -8,6 +8,8 @@
     ./programs
     ./security
     ./services
+    ./system
+    ./time
     ./users
   ];
 }
