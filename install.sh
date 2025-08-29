@@ -44,11 +44,11 @@ nixosInstall() {
 
 while :; do
   clear
-  echo -e "Chose host:\n1) MoeOS\nq) quit\n"
+  echo -e "Chose host:\n1) MoeLaptop\nq) quit\n"
   read hostname
   case "$hostname" in
     1)
-      echo "You chose MoeOS, contunue? (y/n): "
+      echo "You chose MoeLaptop, contunue? (y/n): "
       continueFunc
       diskSetup
       nixosInstall
