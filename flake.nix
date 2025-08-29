@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration";
+  description = "MoeOS";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -18,7 +18,7 @@
     user = "Devemoe";
 
     hosts = [
-      { hostname = "MoeOS"; system = "x86_64-linux"; stateVersion = "25.05"; }
+      { hostname = "MoeLaptop"; system = "x86_64-linux"; stateVersion = "25.05"; }
     ];
 
     makeSystem = { hostname, system, stateVersion }: nixpkgs.lib.nixosSystem {
