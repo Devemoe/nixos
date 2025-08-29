@@ -2,6 +2,7 @@
   imports = [
     ./boot
     ./environment
+    ./fonts
     ./networking
     ./nix
     ./nixpkgs
