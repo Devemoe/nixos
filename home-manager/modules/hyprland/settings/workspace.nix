@@ -9,7 +9,7 @@
     "7, monitor:eDP-1"
     "8, monitor:eDP-1"
     "9, monitor:eDP-1"
-    "10, monitor:HDMI-A-1"
+    "10, gapsout:0, gapsin:0, bordersize:0, monitor:HDMI-A-1"
     
     "w[tv1], gapsout:0, gapsin:0"
     "f[1], gapsout:0, gapsin:0"

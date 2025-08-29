@@ -8,8 +8,8 @@
     float_gaps = 0;
     gaps_workspaces = 0;
     
-    "col.inactive_border" = "rgb(125,50,90)";
-    "col.active_border" = "rgb(250,100,180)";
+    "col.inactive_border" = "rgb(108,112,134)"; # "rgb(125,50,90)";
+    "col.active_border" = "rgb(137,180,250)"; # "rgb(250,100,180)";
 
     layout = "dwindle";
 
