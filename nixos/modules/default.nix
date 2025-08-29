@@ -4,6 +4,7 @@
     ./environment
     ./networking
     ./nix
+    ./nixpkgs
     ./programs
     ./security
     ./services
